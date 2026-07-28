@@ -1,13 +1,13 @@
-const CACHE_NAME = 'bazilio-portas-v2';
-const BASE_PATH = '/bazilio-portas/';
+const CACHE_NAME = 'bazilio-portas-v8';
 const ASSETS = [
-  BASE_PATH,
-  BASE_PATH + 'index.html',
-  BASE_PATH + 'manifest.json',
-  BASE_PATH + 'icon.png',
-  BASE_PATH + 'icon-192.png',
-  BASE_PATH + 'icon-512.png',
-  BASE_PATH + 'offline.html'
+  './',
+  './index.html',
+  './manifest.json',
+  './icon.png',
+  './icon-192.png',
+  './icon-512.png',
+  './favicon.ico',
+  './offline.html'
 ];
 
 self.addEventListener('install', (event) => {
@@ -28,22 +28,18 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
-  
-  const url = new URL(event.request.url);
-  // Only handle requests to our GitHub Pages domain
-  if (url.origin !== location.origin) return;
-  
   event.respondWith(
     caches.match(event.request).then((cached) => {
-      const fetchPromise = fetch(event.request)
-        .then((networkResponse) => {
-          if (networkResponse.ok) {
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse.clone()));
-          }
-          return networkResponse;
-        })
-        .catch(() => cached || caches.match(BASE_PATH + 'offline.html'));
-      return cached || fetchPromise;
-    })
+      if (cached) {
+        fetch(event.request).then((res) => {
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, res));
+        }).catch(() => {});
+        return cached;
+      }
+      return fetch(event.request).then((res) => {
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, res.clone()));
+        return res;
+      });
+    }).catch(() => caches.match('./offline.html'))
   );
 });
