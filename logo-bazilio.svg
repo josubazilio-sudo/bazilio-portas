@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e4c25f"/>
+      <stop offset="50%" style="stop-color:#c9a227"/>
+      <stop offset="100%" style="stop-color:#a8841e"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#242424"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="80" fill="url(#bgGrad)"/>
+  <rect x="100" y="80" width="200" height="240" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="8"/>
+  <rect x="120" y="100" width="80" height="140" rx="6" fill="url(#goldGrad)" opacity="0.15"/>
+  <rect x="124" y="104" width="72" height="132" rx="4" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="130" cy="170" r="5" fill="url(#goldGrad)"/>
+  <rect x="160" y="200" width="20" height="40" rx="3" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+  <line x1="100" y1="200" x2="300" y2="200" stroke="url(#goldGrad)" stroke-width="4" opacity="0.4"/>
+  <rect x="215" y="100" width="70" height="200" rx="6" fill="url(#goldGrad)" opacity="0.08"/>
+  <rect x="220" y="105" width="60" height="190" rx="4" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <rect x="230" y="115" width="40" height="40" rx="4" fill="url(#goldGrad)" opacity="0.2"/>
+  <line x1="230" y1="175" x2="270" y2="175" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.5"/>
+  <line x1="230" y1="190" x2="260" y2="190" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.5"/>
+  <line x1="230" y1="205" x2="270" y2="205" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.5"/>
+  <line x1="230" y1="265" x2="270" y2="265" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.5"/>
+  <text x="200" y="355" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="4">BAZILIO</text>
+  <text x="200" y="375" font-family="Arial, sans-serif" font-size="14" fill="#9a9a94" text-anchor="middle" letter-spacing="3">PORTAS</text>
+</svg>
